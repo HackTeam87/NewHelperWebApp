@@ -1,5 +1,8 @@
 export default function (instance) {
     return {
+        MikrotikBase(id) {
+            return instance.get('/api/device/mikrotik/base/'  + id)
+        },
         MikrotikList() {
             return instance.get('/api/device/list')
         },
@@ -22,6 +25,10 @@ export default function (instance) {
             } else {
                 return instance.get('/api/device/mikrotik/arp/' + id)
             }
+        },
+
+        MikrotikQueue(id) {
+            return instance.get('/api/device/mikrotik/queue/'  + id)
         },
 
         MikrotikLease(id ,mac_or_ip) {
